@@ -1,7 +1,17 @@
 @font-face {
-    font-family:"Custom1" ;
+    font-family: "Custom1";
     src: url("./fonts/huxtable/Huxtable.otf");
 }
+@font-face {
+    font-family: "Custom2";
+    src: url("./fonts/sauida/Sauida.ttf");
+}
+@font-face {
+    font-family: "Custom3";
+    src: url("./fonts/subpear/Subpear.otf");
+}
+
+
 
 * {
     margin: 0;
@@ -15,7 +25,7 @@ body {
 header {
     background-color: white;
     height: 16vh;
-    width: 200%;
+    width: 100%;
     box-sizing: border-box;
     position: fixed;
     z-index: 2;
@@ -23,12 +33,15 @@ header {
 }
 
 header img {
-    height: 150px;
+    height: 120px;
     width: 250px;
     margin-left: 30px;
     margin-top: -20px;
     cursor: pointer;
+    user-select: none;
 }
+
+
 .container {
     position: absolute;
     top: 30%;
@@ -36,49 +49,575 @@ header img {
     flex-wrap: wrap;
     height: 60%;
     width: 100%;
-
+    justify-content: center;
+    align-items: center;
 }
-.body-container{
+
+.body-container {
     display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    margin-left: 250px;
-    position: relative;
-    margin-bottom: 30px;
-
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 
 }
-.body-container img{
+
+.body-container img {
     border-radius: 30px;
     height: auto;
-    width: auto;
-    justify-content: space-evenly;
+    width:auto;
+    margin-left: 10px;
     cursor: pointer;
-
+    margin-bottom: 10px;
+    padding: 2px;
+    user-select: none;
+    background-image: linear-gradient(to right,blue,orange);
 }
-.body-container img:hover{
+
+.body-container img:hover {
     transform: scale(1.01);
 }
-.body-container a{
+
+.body-container a {
     color: black;
     text-decoration: none;
 }
-.body-container h1{
+
+.body-container h1 {
     font-size: 40px;
     font-family: Custom1;
     text-align: center;
     letter-spacing: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
-footer{
+.body-container h1::first-letter{
+    color: orange;
+
+}
+.body-container h1::selection{
+    background-color: blue;
+    color: orange;
+}
+footer {
     position: absolute;
     height: 5vh;
     top: 93%;
     width: 100%;
+}
+
+
+
+/* Media Queries */
+
+/* Extra small devices (portrait phones, less than 670px) */
+@media (max-width: 669.98px) {
+    header{
+        height: 15vh;
+    }
+    header img {
+        height: 100px;
+        width: 130px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .container {
+        top: 25%;
+    }
+
+    .body-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .body-container img {
+        width: 90%;
+    }
+
+    .body-container h1 {
+        font-size: 18px;
+    }
+
+    footer {
+        top: 85%;
+    }
+
+   
+}
+
+/* Small devices (landscape phones, 670px and up) */
+@media (min-width: 670px) and (max-width: 767.98px) {
+    header img {
+        height: 100px;
+        width: 150px;
+        margin-left: 15px;
+        margin-top: -10px;
+    }
+
+    .container {
+        top: 28%;
+    }
+
+    .body-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .body-container img {
+        width: 85%;
+    }
+
+    .body-container h1 {
+        font-size: 22px;
+    }
+
+    footer {
+        top: 88%;
+    }
+
     
 }
-#sponser{
-    font-size: 17px;
-    color: blue;margin: 10px;
-    
 
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    header img {
+        height: 120px;
+        width: 200px;
+        margin-left: 20px;
+        margin-top: -15px;
+    }
+
+    .container {
+        top: 30%;
+    }
+
+    .body-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .body-container img {
+        width: 80%;
+    }
+
+    .body-container h1 {
+        font-size: 28px;
+    }
+
+    footer {
+        top: 90%;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    header img {
+        height: 140px;
+        width: 230px;
+        margin-left: 25px;
+        margin-top: -20px;
+    }
+
+    .container {
+        top: 32%;
+    }
+
+    .body-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .body-container img {
+        width: 75%;
+    }
+
+    .body-container h1 {
+        font-size: 34px;
+    }
+
+    footer {
+        top: 92%;
+    }
+
+    
+}
+
+
+
+
+.search{
+    position: relative;
+    top: -60px;
+    left:35%;
+   
+}
+.search input{
+    height: 5vh;
+    width: 30%;
+    padding: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: orangered;
+    font-size: 15px;
+    
+}
+.search input:focus{
+    outline: none;
+}
+.search input::placeholder{
+    color: orangered;
+}
+.search .searchicon{
+    margin-left: -30px;
+    color: orangered;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Studenthtml*/
+/* 
+aside img{
+    width: 50%;
+    height: 80vh;
+    padding: 50px;
+}
+.form-student{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    height: auto;
+    width: 30%;
+    background-color: white;
+
+}
+.form-student form{
+    margin: 20px;
+    padding: 20px;
+
+
+}
+.form-student h1::first-letter{
+    color: blue;
+}
+.form-student h1{
+    color: orangered;
+    text-align: center;
+    margin: 20px;
+    margin-left: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: Custom3;
+    letter-spacing: 7px;
+}
+
+
+
+.form-student input{
+    margin-top: 30px;
+    padding-left: 50px;
+    height: 6vh;
+    width: 100%;
+    margin-left: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+}
+.form-student input:focus{
+    outline: none;
+}
+.email ,.password{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 40px;
+    color: orangered;
+    font-size: 25px;
+
+}
+
+ #sub-btn{
+    position: absolute;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 50%;
+    margin-top: 40px;
+    margin-left: 150px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+.form-student #sub-btn:focus{
+    transform: translateY(10px);
+}
+
+@media (max-width: 669.98px) {
+    aside img{
+        width: 70%;
+        height: 50%;
+        margin-top: -30px;
+        margin: 50px;
+    }
+    .form-student{
+        position: absolute;
+        top: 50%;
+        width: 70%;
+        left: 10%;
+    }
+    .form-student h1{
+        font-size: 30px;
+
+    }
+    .form-student #sub-btn{
+        margin-top: 10px;
+    }
+}
+@media (min-width: 670px) and (max-width: 767.98px) {
+    aside img{
+        width: 70%;
+        height: 50%;
+        margin-top: -30px;
+        margin: 50px;
+    }
+    .form-student{
+        position: absolute;
+        top: 50%;
+        width: 70%;
+        left: 10%;
+    }
+    .form-student h1{
+        font-size: 30px;
+
+    }
+    .form-student #sub-btn{
+        margin-top: 10px;
+    }   
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    aside img{
+        width: 70%;
+        height: 50%;
+        margin-top: -30px;
+        margin: 50px;
+    }
+    .form-student{
+        position: absolute;
+        top: 50%;
+        width: 70%;
+        left: 10%;
+    }
+    .form-student h1{
+        font-size: 30px;
+
+    }
+    .form-student #sub-btn{
+        margin-top: 10px;
+    }  
+} */
+
+/* Base Styles */
+aside img {
+    width: 50%;
+    height: 80vh;
+    padding: 50px;
+}
+
+.form-student {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    height: auto;
+    width: 30%;
+    background-color: white;
+}
+
+.form-student form {
+    margin: 20px;
+    padding: 20px;
+}
+
+.form-student h1::first-letter {
+    color: blue;
+}
+
+.form-student h1 {
+    color: orangered;
+    text-align: center;
+    margin: 20px;
+    margin-left: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: Custom3;
+    letter-spacing: 7px;
+}
+
+.form-student input {
+    margin-top: 30px;
+    padding-left: 50px;
+    height: 6vh;
+    width: 100%;
+    margin-left: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 15px;
+}
+
+.form-student input:focus {
+    outline: none;
+}
+
+.email, .password {
+    position: absolute;
+    margin-top: 36px;
+    margin-left: 40px;
+    color: orangered;
+    font-size: 25px;
+}
+
+#sub-btn {
+    position: absolute;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: 50%;
+    margin-top: 40px;
+    margin-left: 150px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.form-student #sub-btn:focus {
+    transform: translateY(10px);
+}
+
+
+@media (max-width: 669px) {
+    aside img {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .form-student {
+        position: absolute;
+        width: 90%;
+        height: auto;
+    
+        top: 30%;
+        left: -20px;
+        text-align: center;
+    }
+    
+    
+    .form-student h1 {
+        font-size: 24px;
+        margin-left: -20;
+    }
+
+    .form-student #sub-btn {
+        margin-top: 10px;
+        left: 10%;
+        width: 150px;
+    }
+    .email ,.password{
+        margin-top: 40px;
+    }
+}
+
+/* Screens from 670px to 767.98px */
+@media (min-width: 670px) and (max-width: 767.98px) {
+    aside img {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-student {
+        position: static;
+        width: 80%;
+        margin: 20px auto;
+        top: auto;
+        left: 20%;
+        text-align: center;
+    }
+
+    .form-student h1 {
+        font-size: 28px;
+    }
+
+    .form-student #sub-btn {
+        margin-top: 10px;
+        left: 10%;
+        width: 150px;
+    }
+}
+
+/* Screens from 768px to 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    aside img {
+        width: 70%;
+        height: auto;
+        padding: 30px;
+    }
+
+    .form-student {
+        position: absolute;
+        top: 25%;
+        left: 60%;
+        width: 50%;
+    }
+
+    .form-student h1 {
+        font-size: 30px;
+    }
+
+    .form-student #sub-btn {
+        margin-top: 10px;
+        left: 10%;
+        width: 150px;
+    }
+}
+
+/* Screens larger than 992px */
+@media (min-width: 992px) {
+    aside img {
+        width: 50%;
+        height: 80vh;
+        padding: 50px;
+    }
+
+    .form-student {
+        position: absolute;
+        top: 25%;
+        left: 60%;
+        width: 30%;
+    }
+
+    .form-student h1 {
+        font-size: 32px;
+    }
+
+    .form-student #sub-btn {
+        margin-top: 10px;
+        width: 50%;
+    }
 }
