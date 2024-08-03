@@ -272,6 +272,7 @@ footer {
     margin-left: -30px;
     color: orangered;
     background-color: white;
+    cursor: pointer;
 }
 
 
@@ -486,51 +487,40 @@ aside img {
 
 
 /* nec.html */
-/* 
-.student-deatils {
+.student-deatils{
     position: absolute;
     border: 1px solid black;
     height: 100%;
-    width: 80%;
+    width: auto;
     padding: 40px;
     top: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 100px;
+    margin-left: 30px;
     border-radius: 20px;
-    background: #fff; 
-}
-
-.student-entry {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    height: 200px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    width: 200px;
-    text-align: center;
-    justify-content: space-around;
-}
-
-.student-name {
+ }
+ /*
+.student-deatils #name-display{
     position: absolute;
-    top: 34%;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 10px 0;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 180px;
+    margin-left: 20px;
+}
+#image-display {
+    display: flex;
+    top: -30px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    height: 150px;
+    width: 150px;  
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; 
 }
 
-.student-img {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    margin-bottom: 10px;
-    border: 2px solid #ddd; 
-    background: #eee; 
+#image-display img {
+    width: 100%;
+    height: auto;
+    display: block;
 } */
+

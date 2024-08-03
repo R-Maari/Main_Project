@@ -1,60 +1,9 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTTF</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Nttf.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header>
-        <img src="Nttf.png" alt="nttf">
-
-        <div class="search">
-            <input type="search" id="search" placeholder="Search Anything...."><i class="fa-sharp searchicon fa-solid fa-magnifying-glass"></i>
-
-        </div>
-    </header>
-
-    <div class="search-result">
-        <p id="notfoundmsg">Data Not Found</p>
-    </div>
-<div class="student-deatils">
-        <div id="name-display"></div>
-    <div id="image-display"></div>
-    </div>
-
-    <script>
-        window.onload = function() {
-            const name = localStorage.getItem('name');
-            const image = localStorage.getItem('image');
-
-            if (name) {
-                document.getElementById('name-display').textContent = ` ${name}`;
-            } else {
-                document.getElementById('name-display').textContent = 'Name not found.';
-            }
-
-            if (image) {
-                const imgElement = document.createElement('img');
-                imgElement.src = image;
-                document.getElementById('image-display').appendChild(imgElement);
-            } else {
-                document.getElementById('image-display').textContent = 'No image found.';
-            }
-        }
-    </script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTTF Details</title>
+    <title>NTTF NEC</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Nttf.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -114,7 +63,7 @@ header img {
             position: absolute;
         font-size: 20px;
         text-align: center;
-        margin-top: 200px;
+        margin-top: 20px;
          margin-left: 60px;
         }
     </style>
@@ -124,25 +73,35 @@ header img {
         <img src="Nttf.png" alt="nttf">
 
         <div class="search">
-            <input type="search" id="search" placeholder="Search Anything...."><i class="fa-sharp searchicon fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="search" placeholder="Search Anything...." oninput="searchEntries()">
+            <i class="fa-sharp searchicon fa-solid fa-magnifying-glass"></i>
 
         </div>
     </header>
     <div class="student-details" id="student-details">
         <!-- Entries will be dynamically added here -->
     </div>
-
     <script>
         window.onload = function() {
             const entries = JSON.parse(localStorage.getItem('entries')) || [];
-            const studentDetails = document.getElementById('student-details');
+            displayEntries(entries);
+        }
 
+        function displayEntries(entries) {
+            const studentDetails = document.getElementById('student-details');
             studentDetails.innerHTML = entries.map(entry => `
                 <div class="student-entry">
+                    <img src="${entry.image}" alt="Image">
                     <p>${entry.name}</p>
-                    ${entry.image ? `<img src="${entry.image}" alt="Image">` : 'No image available'}
                 </div>
             `).join('');
+        }
+
+        function searchEntries() {
+            const searchValue = document.getElementById('search').value.toLowerCase();
+            const entries = JSON.parse(localStorage.getItem('entries')) || [];
+            const filteredEntries = entries.filter(entry => entry.name.toLowerCase().includes(searchValue));
+            displayEntries(filteredEntries);
         }
     </script>
 </body>
