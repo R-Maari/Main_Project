@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,5 +18,132 @@
         </div>
     </header>
 
-    </body>
-    </html>
+    <div class="search-result">
+        <p id="notfoundmsg">Data Not Found</p>
+    </div>
+<div class="student-deatils">
+        <div id="name-display"></div>
+    <div id="image-display"></div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('name');
+            const image = localStorage.getItem('image');
+
+            if (name) {
+                document.getElementById('name-display').textContent = ` ${name}`;
+            } else {
+                document.getElementById('name-display').textContent = 'Name not found.';
+            }
+
+            if (image) {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                document.getElementById('image-display').appendChild(imgElement);
+            } else {
+                document.getElementById('image-display').textContent = 'No image found.';
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTTF Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Nttf.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+    background-color: white;
+    height: 16vh;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0px 0px 20px black, 0px 0px 30px black;
+}
+
+header img {
+    height: 120px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: -20px;
+    cursor: pointer;
+    user-select: none;
+}
+        .student-details {
+            position: absolute;
+            top: 20%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .student-entry {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            height: 250px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .student-entry img {
+        display: block;
+        margin: 0 auto 10px auto;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        object-fit: cover; 
+        overflow: hidden;
+}
+
+        .student-entry p {
+            position: absolute;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 200px;
+         margin-left: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Nttf.png" alt="nttf">
+
+        <div class="search">
+            <input type="search" id="search" placeholder="Search Anything...."><i class="fa-sharp searchicon fa-solid fa-magnifying-glass"></i>
+
+        </div>
+    </header>
+    <div class="student-details" id="student-details">
+        <!-- Entries will be dynamically added here -->
+    </div>
+
+    <script>
+        window.onload = function() {
+            const entries = JSON.parse(localStorage.getItem('entries')) || [];
+            const studentDetails = document.getElementById('student-details');
+
+            studentDetails.innerHTML = entries.map(entry => `
+                <div class="student-entry">
+                    <p>${entry.name}</p>
+                    ${entry.image ? `<img src="${entry.image}" alt="Image">` : 'No image available'}
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

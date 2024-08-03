@@ -286,150 +286,6 @@ footer {
 
 
 /*Studenthtml*/
-/* 
-aside img{
-    width: 50%;
-    height: 80vh;
-    padding: 50px;
-}
-.form-student{
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 25%;
-    left: 60%;
-    height: auto;
-    width: 30%;
-    background-color: white;
-
-}
-.form-student form{
-    margin: 20px;
-    padding: 20px;
-
-
-}
-.form-student h1::first-letter{
-    color: blue;
-}
-.form-student h1{
-    color: orangered;
-    text-align: center;
-    margin: 20px;
-    margin-left: 30px;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-family: Custom3;
-    letter-spacing: 7px;
-}
-
-
-
-.form-student input{
-    margin-top: 30px;
-    padding-left: 50px;
-    height: 6vh;
-    width: 100%;
-    margin-left: 30px;
-    border-radius: 10px;
-    border: 1px solid black;
-    font-size: 15px;
-}
-.form-student input:focus{
-    outline: none;
-}
-.email ,.password{
-    position: absolute;
-    margin-top: 40px;
-    margin-left: 40px;
-    color: orangered;
-    font-size: 25px;
-
-}
-
- #sub-btn{
-    position: absolute;
-    background-color: blue;
-    border: none;
-    border-radius: 10px;
-    height: 50px;
-    width: 50%;
-    margin-top: 40px;
-    margin-left: 150px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 15px;
-}
-.form-student #sub-btn:focus{
-    transform: translateY(10px);
-}
-
-@media (max-width: 669.98px) {
-    aside img{
-        width: 70%;
-        height: 50%;
-        margin-top: -30px;
-        margin: 50px;
-    }
-    .form-student{
-        position: absolute;
-        top: 50%;
-        width: 70%;
-        left: 10%;
-    }
-    .form-student h1{
-        font-size: 30px;
-
-    }
-    .form-student #sub-btn{
-        margin-top: 10px;
-    }
-}
-@media (min-width: 670px) and (max-width: 767.98px) {
-    aside img{
-        width: 70%;
-        height: 50%;
-        margin-top: -30px;
-        margin: 50px;
-    }
-    .form-student{
-        position: absolute;
-        top: 50%;
-        width: 70%;
-        left: 10%;
-    }
-    .form-student h1{
-        font-size: 30px;
-
-    }
-    .form-student #sub-btn{
-        margin-top: 10px;
-    }   
-}
-@media (min-width: 768px) and (max-width: 991.98px) {
-    aside img{
-        width: 70%;
-        height: 50%;
-        margin-top: -30px;
-        margin: 50px;
-    }
-    .form-student{
-        position: absolute;
-        top: 50%;
-        width: 70%;
-        left: 10%;
-    }
-    .form-student h1{
-        font-size: 30px;
-
-    }
-    .form-student #sub-btn{
-        margin-top: 10px;
-    }  
-} */
-
-/* Base Styles */
 aside img {
     width: 50%;
     height: 80vh;
@@ -513,7 +369,7 @@ aside img {
 @media (max-width: 669px) {
     aside img {
         width: 90%;
-        height: auto;
+        height: 100%;
         padding: 10px;
     }
 
@@ -521,7 +377,8 @@ aside img {
         position: absolute;
         width: 90%;
         height: auto;
-    
+        background-color: black;
+
         top: 30%;
         left: -20px;
         text-align: center;
@@ -621,3 +478,59 @@ aside img {
         width: 50%;
     }
 }
+
+
+
+
+
+
+
+/* nec.html */
+/* 
+.student-deatils {
+    position: absolute;
+    border: 1px solid black;
+    height: 100%;
+    width: 80%;
+    padding: 40px;
+    top: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+    border-radius: 20px;
+    background: #fff; 
+}
+
+.student-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 200px;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.student-name {
+    position: absolute;
+    top: 34%;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.student-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-bottom: 10px;
+    border: 2px solid #ddd; 
+    background: #eee; 
+} */
