@@ -6,13 +6,10 @@
     <title>NTTF NEC</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Nttf.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+       
         header {
     background-color: white;
     height: 16vh;
@@ -38,10 +35,11 @@ header img {
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
+          
         }
         .student-entry {
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 20px;
             margin: 10px;
             padding: 10px;
             height: 250px;
@@ -73,14 +71,16 @@ header img {
         <img src="Nttf.png" alt="nttf">
 
         <div class="search">
-            <input type="search" id="search" placeholder="Search Anything...." oninput="searchEntries()">
+            <input type="search" id="search" placeholder="Search Anything...." oninput="search()">
             <i class="fa-sharp searchicon fa-solid fa-magnifying-glass"></i>
 
         </div>
     </header>
+    
+
     <div class="student-details" id="student-details">
-        <!-- Entries will be dynamically added here -->
     </div>
+   
     <script>
         window.onload = function() {
             const entries = JSON.parse(localStorage.getItem('entries')) || [];
@@ -90,19 +90,26 @@ header img {
         function displayEntries(entries) {
             const studentDetails = document.getElementById('student-details');
             studentDetails.innerHTML = entries.map(entry => `
+            <div data-aos="zoom-out-left">
                 <div class="student-entry">
                     <img src="${entry.image}" alt="Image">
                     <p>${entry.name}</p>
                 </div>
+                </div>
             `).join('');
         }
 
-        function searchEntries() {
+        function seacrh() {
             const searchValue = document.getElementById('search').value.toLowerCase();
             const entries = JSON.parse(localStorage.getItem('entries')) || [];
             const filteredEntries = entries.filter(entry => entry.name.toLowerCase().includes(searchValue));
             displayEntries(filteredEntries);
         }
     </script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   
+     <script>
+         AOS.init();
+       </script>
 </body>
 </html>

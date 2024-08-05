@@ -6,6 +6,7 @@
     <title>NTTF</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Nttf.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -14,6 +15,8 @@
     </header>
 
     <div class="container">
+        <div data-aos="fade-right">
+
             <div class="body-container">
                 <a href="nec.html" id="nec-link"> 
                 <img src="nec.jpeg" alt="nec">
@@ -21,18 +24,25 @@
                 <h1>NEC</h1>
               
             </div>
+            </div>
         
           
             <div class="body-container">
+                <div data-aos="fade-left">
                 <a href="ttc.html" id="ttc-link"> 
                 <img src="ttc.jpeg" alt="ttc">
                 </a>
                 <h1>TTC</h1>
             
             </div>
+            </div>
         
     </div>
-
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>
