@@ -12,17 +12,21 @@ $welcomeMessage = "Welcome to the Home Page"; // Default message
 if ($email === 'nec0822058@nttf.co.in') {
     $welcomeMessage = "Welcome to R Maridurai";
 }
-elseif ($email === 'nec0822024@nttf.co.in') {
+if ($email === 'nec0822024@nttf.co.in') {
     $welcomeMessage = "Welcome to Janani";
 }
-elseif ($email === 'nec0822013@nttf.co.in') {
+if ($email === 'nec0822013@nttf.co.in') {
     $welcomeMessage = "Welcome to Joy Chiristina";
 }
-elseif ($email === 'ttc0822042@nttf.co.in') {
+if ($email === 'ttc0822042@nttf.co.in') {
     $welcomeMessage = "Welcome to Archana";
 }
-elseif ($email === 'ttc0822041@nttf.co.in') {
+if ($email === 'ttc0822041@nttf.co.in') {
     $welcomeMessage = "Welcome to Riswan";
+}
+
+if ($email === 'nec0822072@nttf.co.in') {
+    $welcomeMessage = "Welcome to Sanjai A";
 }
 ?>
 
